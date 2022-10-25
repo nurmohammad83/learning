@@ -1,7 +1,21 @@
 import React from 'react';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { MyContext } from '../Context/AuthContes';
 
 const Header = () => {
+  const {user,logOut} = useContext(MyContext)
+
+
+	const handelLogOut =()=>{
+		logOut()
+		.then(res=>{
+			const user = res.user;
+			console.log(user);
+		}).catch(error=>{
+			console.error(error)
+		})
+	}
     return (
       <header className="p-4 bg-gray-300 font-semibold dark:text-gray-100">
       <div className="container flex justify-between h-16 mx-auto">
@@ -22,12 +36,18 @@ const Header = () => {
             <Link rel="noopener noreferrer" to='/faq' className="flex items-center px-4 mb-1 border-b-2 dark:border-transparent hover:border-orange-400">FAQ</Link>
           </li>
     
-            <li className="flex">
-          <Link rel="noopener noreferrer" to='/login' className="flex items-center px-4 mb-1 border-b-2 dark:border-transparent hover:border-orange-400">Log In</Link>
-        </li>
-        <li className="flex ">
-          <Link rel="noopener noreferrer" to='/signup' className="flex bg-red-500  items-center px-4 mb-1 border-b-2 dark:border-transparent hover:border-orange-400 text-white">Sign Up</Link>
-        </li>
+          {user?.uid?
+			<Link onClick={handelLogOut} rel="noopener noreferrer" to='' className="flex items-center px-4 mb-1 border-b-2 dark:border-transparent hover:border-orange-400">Sign Out</Link>
+			:
+			<div className='flex'>
+				<li className="flex">
+			<Link rel="noopener noreferrer" to='/login' className="flex items-center px-4 mb-1 border-b-2 dark:border-transparent hover:border-orange-400">Log In</Link>
+		</li>
+		<li className="flex ">
+			<Link rel="noopener noreferrer" to='/signup' className="flex bg-red-500  items-center px-4 mb-1 border-b-2 dark:border-transparent hover:border-orange-400 text-white">Sign Up</Link>
+		</li>
+			</div>
+			}
        
         
         </ul>
