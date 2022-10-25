@@ -10,21 +10,18 @@ const SignUp = () => {
 
 		e.preventDefault()
 		const form= e.target;
+		const name =form.name.value;
+		const photoUrl =form.photourl.value;
 		const email =form.email.value;
 		const password=form.password.value;
 		const confirm= form.confirm.value;
-
-		console.log(email,password,confirm);
 
 
 		if(password.length > 6){
 			toast.warning('Password must be 6 characters',{autoClose: 700})
             return;
         }
-		if(  password !== confirm){
-			toast.warning('Password did not match', { autoClose: 500})	
-			return;
-		}
+		
 		createNewUser (email,password)
 		.then(res=>{
 			const user = res.user
@@ -74,14 +71,20 @@ const SignUp = () => {
 	<h1 className="text-2xl font-bold text-center">Sign Up</h1>
 	<form onSubmit={handelwithSignUp} noValidate="" action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
 		<div className="space-y-1 text-sm">
+			<label htmlFor="username" className="block dark:text-gray-400">Full Name</label>
+			<input type="text" name="name" id="name" placeholder="Name" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+		</div>
+		<div className="space-y-1 text-sm">
+			<label htmlFor="username" className="block dark:text-gray-400">Photo Url</label>
+			<input type="text" name="photourl" id="photourl" placeholder="Photo Url" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
+		</div>
+		<div className="space-y-1 text-sm">
 			<label htmlFor="username" className="block dark:text-gray-400">Email</label>
 			<input type="text" name="email" id="email" placeholder="Email" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
 		</div>
 		<div className="space-y-1 text-sm">
 			<label htmlFor="password" className="block dark:text-gray-400">Password</label>
 			<input type="password" name="password" id="password" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
-			<label htmlFor="password" className="block dark:text-gray-400">Confirm Password</label>
-			<input type="password" name="confirm" id="confirm" placeholder="Password" className="w-full px-4 py-3 rounded-md dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 focus:dark:border-violet-400" />
 		</div>
 		<button className="block w-full p-3 text-center rounded-sm dark:text-gray-900 font-semibold bg-violet-400">Sign Up</button>
 	</form>

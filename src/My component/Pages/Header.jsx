@@ -6,7 +6,6 @@ import { MyContext } from '../Context/AuthContes';
 const Header = () => {
   const {user,logOut} = useContext(MyContext)
 
-
 	const handelLogOut =()=>{
 		logOut()
 		.then(res=>{
@@ -37,14 +36,27 @@ const Header = () => {
           </li>
     
           {user?.uid?
-			<Link onClick={handelLogOut} rel="noopener noreferrer" to='' className="flex items-center px-4 mb-1 border-b-2 dark:border-transparent hover:border-orange-400">Sign Out</Link>
+			<div className='flex'>
+<Link onClick={handelLogOut} rel="noopener noreferrer" to='' className="flex items-center px-4 mb-1 border-b-2 dark:border-transparent hover:border-orange-400">Sign Out</Link>
+<Link>
+<img src={user?.photoURL? user.photoURL : 'https://images.pexels.com/photos/7422160/pexels-photo-7422160.jpeg?auto=compress&cs=tinysrgb&w=600'} alt="" className="w-12 h-12 mx-auto rounded-full dark:bg-gray-500 aspect-square" />
+</Link>
+      </div>
 			:
 			<div className='flex'>
 				<li className="flex">
 			<Link rel="noopener noreferrer" to='/login' className="flex items-center px-4 mb-1 border-b-2 dark:border-transparent hover:border-orange-400">Log In</Link>
 		</li>
 		<li className="flex ">
-			<Link rel="noopener noreferrer" to='/signup' className="flex bg-red-500  items-center px-4 mb-1 border-b-2 dark:border-transparent hover:border-orange-400 text-white">Sign Up</Link>
+			<Link rel="noopener noreferrer" to='/signup' className="flex mr-2 bg-red-500  items-center px-4 mb-1 border-b-2 dark:border-transparent hover:border-orange-400 text-white">Sign Up</Link>
+      <label htmlFor="Toggle1" className="inline-flex items-center space-x-4 cursor-pointer text-slate-800">
+	<span className="relative">
+		<input id="Toggle1" type="checkbox" className="hidden peer" />
+		<div className="w-10 h-6 rounded-full shadow-inner bg-gray-400 peer-checked:dark:bg-violet-400"></div>
+		<div className="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto bg-gray-800"></div>
+	</span>
+
+</label>
 		</li>
 			</div>
 			} 
