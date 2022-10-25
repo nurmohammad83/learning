@@ -14,7 +14,7 @@ const SignUp = () => {
 		const photoUrl =form.photourl.value;
 		const email =form.email.value;
 		const password=form.password.value;
-		const confirm= form.confirm.value;
+
 
 
 		if(password.length > 6){
@@ -22,7 +22,7 @@ const SignUp = () => {
             return;
         }
 		
-		createNewUser (email,password)
+		createNewUser (email,password,name,photoUrl)
 		.then(res=>{
 			const user = res.user
 			form.reset()

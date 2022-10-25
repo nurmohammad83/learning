@@ -6,6 +6,7 @@ import SignUp from "../Login/SignUp";
 import Blog from "../Pages/Blog";
 import Courses from "../Pages/Courses";
 import Faq from "../Pages/Faq";
+import SideNav from "../Pages/SideNav";
 
 
 const router = createBrowserRouter([
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
             {
                 path:'/courses',
                 element:<Courses/>,
+                loader:()=> fetch('http://localhost:5000/courses')
             },
             {
                 path:'/blog',
@@ -24,6 +26,11 @@ const router = createBrowserRouter([
             {
                 path:'/faq',
                 element:<Faq/>,
+            },
+            {
+                path:'/side',
+                element:<SideNav/>,
+                loader:()=> fetch('http://localhost:5000/courses')
             },
             {
                 path:'/login',
