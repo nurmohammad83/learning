@@ -47,9 +47,7 @@ const Header = () => {
 			<Link rel="noopener noreferrer" to='/signup' className="flex bg-red-500  items-center px-4 mb-1 border-b-2 dark:border-transparent hover:border-orange-400 text-white">Sign Up</Link>
 		</li>
 			</div>
-			}
-       
-        
+			} 
         </ul>
         <button className="flex justify-end p-4 md:hidden">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
