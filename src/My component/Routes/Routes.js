@@ -5,19 +5,24 @@ import LogIn from "../Login/Login";
 import SignUp from "../Login/SignUp";
 import Blog from "../Pages/Blog";
 import Courses from "../Pages/Courses";
+import CoursesDetails from "../Pages/CoursesDetails";
+import ErrorPage from "../Pages/ErrorPage";
 import Faq from "../Pages/Faq";
 import SideNav from "../Pages/SideNav";
+import PrivetRoute from "./PrivetRoute";
 
 
 const router = createBrowserRouter([
     {
         path:'/',
         element:<Main/>,
+        errorElement:<ErrorPage/>,
+        loader:()=> fetch('http://localhost:5000/courses'),
         children:[
             {
-                path:'/courses',
-                element:<Courses/>,
-                loader:()=> fetch('http://localhost:5000/courses')
+                path:'/courses/:id',
+                element:<PrivetRoute><Courses/></PrivetRoute>,
+                loader:({params})=> fetch(`http://localhost:5000/courses${params.id}`)
             },
             {
                 path:'/blog',
@@ -29,8 +34,15 @@ const router = createBrowserRouter([
             },
             {
                 path:'/side',
+                
                 element:<SideNav/>,
-                loader:()=> fetch('http://localhost:5000/courses')
+               
+            },
+            {
+                path:'/details',
+                loader:({params})=> fetch(`http://localhost:5000/courses${params.id}`),
+                element:<CoursesDetails/>,
+               
             },
             {
                 path:'/login',
