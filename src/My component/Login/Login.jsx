@@ -39,7 +39,7 @@ const LogIn = () => {
   }, [user, from, navigate]);
 
   return (
-    <div className="w-full max-w-md p-8 space-y-3 rounded-xl bg-fuchsia-400 my-7 mx-auto dark:text-gray-100">
+    <div className="w-full max-w-md p-12 ml-4  space-y-3 rounded-xl bg-fuchsia-400 my-7 mx-auto dark:text-gray-100">
       <h1 className="text-2xl font-bold text-center">Login</h1>
       <form
         onSubmit={handelLogIn}
