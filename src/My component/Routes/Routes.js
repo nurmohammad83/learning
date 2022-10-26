@@ -22,7 +22,7 @@ const router = createBrowserRouter([
             {
                 path:'/courses/:id',
                 element:<PrivetRoute><Courses/></PrivetRoute>,
-                loader:({params})=> fetch(`http://localhost:5000/courses${params.id}`)
+                loader:({params})=> fetch(`http://localhost:5000/courses-name${params.id}`)
             },
             {
                 path:'/blog',
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
                
             },
             {
-                path:'/details',
+                path:'/details/:id',
                 loader:({params})=> fetch(`http://localhost:5000/courses${params.id}`),
                 element:<CoursesDetails/>,
                

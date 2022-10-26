@@ -12,7 +12,7 @@ const Course = ({course}) => {
             <div className="absolute inset-0 flex translate-y-[50%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
               <h1 className="font-dmserif text-3xl font-bold text-white">{course.name}</h1>
               
-             <Link to={`/courses/${course.courses_id}`}>
+             <Link to={`/details/${course._id}`}>
              <button className="rounded-full bg-orange-500 py-4 px-6 mt-5 font-com text-sm capitalize text-white shadow shadow-black/60">Details</button>
              </Link>
             </div>
