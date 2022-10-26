@@ -4,10 +4,12 @@ import LogIn from "../Login/Login";
 
 import SignUp from "../Login/SignUp";
 import Blog from "../Pages/Blog";
+import CheckOut from "../Pages/CheckOut";
 import Courses from "../Pages/Courses";
 import ErrorPage from "../Pages/ErrorPage";
 import Faq from "../Pages/Faq";
 import Side from "../Pages/Side";
+import PrivetRoute from "./PrivetRoute";
 
 
 const router = createBrowserRouter([
@@ -31,11 +33,14 @@ const router = createBrowserRouter([
                 element:<Side/>,
                 loader:({params})=> fetch(`http://localhost:5000/courses/${params.id}`)
             },
-            
-           
             {
                 path:'/blog',
                 element:<Blog/>,
+            },
+            {
+                path:'/checkout/:id',
+                element:<PrivetRoute><CheckOut/></PrivetRoute>,
+                loader:({params})=> fetch(`http://localhost:5000/courses/${params.id}`)
             },
             {
                 path:'/faq',

@@ -5,6 +5,8 @@ import Course from './Course';
 const Courses = () => {
     const allCourses= useLoaderData([])
     return (
+        <>
+        <h2 className="text-2xl text-center my-2 font-bold">All Courses</h2>
         <div className='grid grid-cols-2 gap-5 w-full p-12'>
         {
             allCourses.map(course=><Course
@@ -12,8 +14,8 @@ const Courses = () => {
             course={course}
             />)
         }
-       
 </div>
+       </>
 
 
     )

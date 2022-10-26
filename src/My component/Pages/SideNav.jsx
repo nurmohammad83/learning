@@ -19,9 +19,9 @@ const SideNav = () => {
     },[])
     return (
         <div className='m-2'>
-            <h6 className='text-2xl text-orange-500'>All Categories Here: {courses.length}</h6>
+            <h6 className='text-2xl text-black font-semibold'>All Categories Here: {courses.length}</h6>
             <div className='p-5 w-[300px] text-xl my-2'  >
-                {courses.map(course=> <p className='m-2' key={course._id}>
+                {courses.map(course=> <p className='m-2 hover:bg-pink-600' key={course._id}>
                     <Link to={`/courses/${course._id}`}>{course.name}</Link>
                 </p> )}
             </div>

@@ -74,7 +74,7 @@ const Header = () => {
                 Sign Out
               </Link>
               <Link>
-                <img
+                <img 
                   src={
                     user?.photoURL
                       ? user.photoURL
