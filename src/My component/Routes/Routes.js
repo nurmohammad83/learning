@@ -21,17 +21,17 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Courses/>,
-                loader:()=> fetch(`http://localhost:5000/courses`)
+                loader:()=> fetch(`https://programming-kit-server.vercel.app/courses`)
             },
             {
                 path:'/courses',
                 element:<Courses/>,
-                loader:()=> fetch(`http://localhost:5000/courses`)
+                loader:()=> fetch(`https://programming-kit-server.vercel.app/courses`)
             },
             {
                 path:'/courses/:id',
                 element:<Side/>,
-                loader:({params})=> fetch(`http://localhost:5000/courses/${params.id}`)
+                loader:({params})=> fetch(`https://programming-kit-server.vercel.app/courses/${params.id}`)
             },
             {
                 path:'/blog',
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
             {
                 path:'/checkout/:id',
                 element:<PrivetRoute><CheckOut/></PrivetRoute>,
-                loader:({params})=> fetch(`http://localhost:5000/courses/${params.id}`)
+                loader:({params})=> fetch(`https://programming-kit-server.vercel.app/courses/${params.id}`)
             },
             {
                 path:'/faq',
