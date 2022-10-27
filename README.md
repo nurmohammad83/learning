@@ -45,7 +45,7 @@ Tailwind Component ->
 
 ## Others Resources
 
-React-Icon -> ()
+React-Icon -> (https://react-icons.github.io/react-icons)
 
 react-to-pdf ->     (https://www.npmjs.com/package/react-to-pdf)
 

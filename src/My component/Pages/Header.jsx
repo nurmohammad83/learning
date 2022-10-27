@@ -35,7 +35,7 @@ const toggleHandel=()=>{
       });
   };
   return (
-    <header className="p-4 bg-gray-300 sm:text-xs md:text-lg md:font-semibold dark:text-gray-100">
+    <header style={myStyle} className="p-4  sm:text-xs md:text-lg md:font-semibold dark:text-gray-100">
       <div className="container flex justify-end md:justify-between h-16 mx-auto">
         <Link
           rel="noopener noreferrer"
