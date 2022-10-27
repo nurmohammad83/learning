@@ -29,7 +29,7 @@ Hosted By Firebase -> (https://programming-kit-client.web.app)
     $ npm react-router-dom
     $ npm i firebase
     $ npm i -g vercel
-    $ npm install react-to-pdf
+    $ npm install react-to-pdf -f
     $ npm firebase deploy
     $ npm install -D tailwindcss
     $ npm install --save react-toastify
