@@ -45,6 +45,7 @@ const Faq = () => {
           </details>
         </div>
       </div>
+      
     </section>
   );
 };

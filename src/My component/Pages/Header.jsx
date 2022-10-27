@@ -11,8 +11,8 @@ const Header = () => {
     backgroundColor:'black'
   })
 
-const toggolHandel=()=>{
-  if(myStyle.color == 'white'){
+const toggleHandel=()=>{
+  if(myStyle.color === 'white'){
     setMyStyle({
       color:'black',
       backgroundColor:'white'
@@ -127,7 +127,7 @@ const toggolHandel=()=>{
               </li>
             </div>
           )}
-          <label onClick={toggolHandel}
+          <label onClick={toggleHandel}
                   htmlFor="Toggle1"
                   className="inline-flex items-center space-x-4 cursor-pointer text-slate-800"
                 >
