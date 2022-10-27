@@ -93,13 +93,14 @@ const toggolHandel=()=>{
               </Link>
               <Link>
                 <img 
+                title={user.displayName ? user.displayName : 'Unknow'}
                   src={
                     user?.photoURL
                       ? user.photoURL
                       : "https://images.pexels.com/photos/7422160/pexels-photo-7422160.jpeg?auto=compress&cs=tinysrgb&w=600"
                   }
                   alt=""
-                  className="w-12 h-12 mx-auto rounded-full dark:bg-gray-500 aspect-square"
+                  className="w-12 h-12 hover: mx-auto rounded-full dark:bg-gray-500 aspect-square"
                 />
               </Link>
             </div>
