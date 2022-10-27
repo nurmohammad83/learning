@@ -75,7 +75,7 @@ const SignUp = () => {
 
 
     return (
-        <div className="w-full  m-5 max-w-md p-8 space-y-3 rounded-xl bg-gray-300 dark:text-gray-100">
+		<div className="md:w-full  max-w-md p-8 space-y-3 md:ml-5 rounded-xl bg-fuchsia-400 md:my-7 mx-1 md:mx-auto dark:text-gray-100">
 	<h1 className="text-2xl font-bold text-center">Sign Up</h1>
 	<form onSubmit={handelwithSignUp} noValidate="" action="" className="space-y-6 ng-untouched ng-pristine ng-valid">
 		<div className="space-y-1 text-sm">

@@ -1,11 +1,29 @@
 import React from "react";
+import { useState } from "react";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { MyContext } from "../Context/AuthContes";
 
 const Header = () => {
   const { user, logOut } = useContext(MyContext);
+  const [myStyle, setMyStyle]= useState({
+    color:'white',
+    backgroundColor:'black'
+  })
 
+const toggolHandel=()=>{
+  if(myStyle.color == 'white'){
+    setMyStyle({
+      color:'black',
+      backgroundColor:'white'
+    })
+  }else{
+    setMyStyle({
+      color:'white',
+      backgroundColor:'black'
+    })
+  }
+}
   const handelLogOut = () => {
     logOut()
       .then((res) => {
@@ -17,23 +35,23 @@ const Header = () => {
       });
   };
   return (
-    <header className="p-4 bg-gray-300 font-semibold dark:text-gray-100">
-      <div className="container flex justify-between h-16 mx-auto">
+    <header className="p-4 bg-gray-300 sm:text-xs md:text-lg md:font-semibold dark:text-gray-100">
+      <div className="container flex justify-end md:justify-between h-16 mx-auto">
         <Link
           rel="noopener noreferrer"
           to="/"
           aria-label="Back to homepage"
-          className="flex items-center p-2"
+          className="md:flex -my-1 items-center p-2"
         >
           <img
             src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnaKpA2Nuk0fcTu5ZTTUY0PBgXt33whGaENQ&usqp=CAU"
             className="w-7 h-7"
             alt=""
           />
-          <h5 className="text-xl ml-2">Programming Kit</h5>
+          <h5 className="md:text-xl ml-2">Programming Kit</h5>
         </Link>
 
-        <ul className="items-stretch hidden space-x-3 md:flex">
+        <ul className="items-stretch -my-1 flex-wrap  space-x-3 flex">
           <li className="flex">
             <Link
               rel="noopener noreferrer"
@@ -104,7 +122,11 @@ const Header = () => {
                 >
                   Sign Up
                 </Link>
-                <label
+                
+              </li>
+            </div>
+          )}
+          <label onClick={toggolHandel}
                   htmlFor="Toggle1"
                   className="inline-flex items-center space-x-4 cursor-pointer text-slate-800"
                 >
@@ -118,11 +140,9 @@ const Header = () => {
                     <div className="absolute inset-y-0 left-0 w-4 h-4 m-1 rounded-full shadow peer-checked:right-0 peer-checked:left-auto bg-gray-800"></div>
                   </span>
                 </label>
-              </li>
-            </div>
-          )}
         </ul>
-        <button className="flex justify-end p-4 md:hidden">
+        
+        {/* <button className="flex justify-end p-4 md:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -137,7 +157,7 @@ const Header = () => {
               d="M4 6h16M4 12h16M4 18h16"
             ></path>
           </svg>
-        </button>
+        </button> */}
       </div>
     </header>
   );

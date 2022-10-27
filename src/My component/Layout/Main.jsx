@@ -11,8 +11,8 @@ const Main = () => {
        
         <div>
             <Header/>
-            <div className='flex'>
-                <div className='w-[300px] bg-slate-400 text-white'>
+            <div className='md:flex'>
+                <div className='md:w-[300px]  bg-slate-400 text-white'>
                    <SideNav/> 
                 </div>
                 <div>
