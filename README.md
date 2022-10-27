@@ -28,6 +28,7 @@ Hosted By Firebase -> (https://programming-kit-client.web.app)
     $ npx create-react-app
     $ npm react-router-dom
     $ npm i firebase
+    $ npm install react-icons --save
     $ npm i -g vercel
     $ npm install react-to-pdf -f
     $ npm firebase deploy
@@ -44,6 +45,9 @@ Tailwind Component ->
 
 ## Others Resources
 
-react to pdf pakag
+React-Icon -> ()
+
+react-to-pdf ->     (https://www.npmjs.com/package/react-to-pdf)
+
 
 Toastify -> (https://www.npmjs.com/package/react-toastify)
